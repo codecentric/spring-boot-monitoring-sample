@@ -1,9 +1,3 @@
 # Spring Boot Showcase
 
-## spring boot init
-
-https://start.spring.io
-
-## spring boot actuator
-
-## spring boot security
+This is a simple [spring](https://spring.io) [boot](http://projects.spring.io/spring-boot/) showcase project, which based on [https://start.spring.io](https://start.spring.io).
