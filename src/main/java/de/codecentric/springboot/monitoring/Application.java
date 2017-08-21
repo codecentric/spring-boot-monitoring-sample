@@ -1,4 +1,4 @@
-package de.codecentric.springbootshowcase;
+package de.codecentric.springboot.monitoring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

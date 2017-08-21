@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.codecentric</groupId>
-	<artifactId>spring-boot-showcase</artifactId>
+	<artifactId>spring-boot-monitoring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-showcase</name>
-	<description>Spring Boot Showcase</description>
+	<name>spring-boot-monitoring</name>
+	<description>Spring Boot Sample Project - Monitoring with Actuator</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,11 +25,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -39,6 +41,7 @@
 			<artifactId>spring-boot-actuator-docs</artifactId>
 		</dependency>
 
+		<!-- test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -54,6 +57,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

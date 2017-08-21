@@ -1,4 +1,4 @@
-package de.codecentric.springbootshowcase.domain;
+package de.codecentric.springboot.monitoring.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

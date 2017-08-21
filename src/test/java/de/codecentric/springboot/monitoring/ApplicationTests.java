@@ -1,4 +1,4 @@
-package de.codecentric.springbootshowcase;
+package de.codecentric.springboot.monitoring;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
