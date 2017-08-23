@@ -1,20 +1,12 @@
 package de.codecentric.springboot.monitoring.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@AllArgsConstructor
+@Getter
 public class EchoMessage {
 
     private final String message;
 
-    @JsonIgnore
-    private String waste;
-
-    public EchoMessage(final String message) {
-        this.message = message;
-        this.waste = "> " + this.message;
-    }
-
-    public String getMessage() {
-        return this.message;
-    }
 }
