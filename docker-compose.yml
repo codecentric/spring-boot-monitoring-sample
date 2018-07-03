@@ -24,7 +24,7 @@ services:
       - app
 
   cadvisor:
-    image: google/cadvisor
+    image: google/cadvisor:v0.27.3
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -36,7 +36,7 @@ services:
       - 8090
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:4.6.3
     depends_on:
       - prometheus
     ports:
