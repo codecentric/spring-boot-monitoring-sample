@@ -1,15 +1,11 @@
-version: '3'
-
-volumes:
-    prometheus_data: {}
-    grafana_data: {}
+version: '3.6'
 
 services:
   prometheus:
     image: prom/prometheus:v1.8.2
     volumes:
       - ./prometheus/:/etc/prometheus/
-      - prometheus_data:/prometheus
+      - ./data/prometheus/:/prometheus
     command:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
@@ -42,7 +38,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - grafana_data:/var/lib/grafana
+      - ./data/grafana/:/var/lib/grafana
 
   app:
     build: .
