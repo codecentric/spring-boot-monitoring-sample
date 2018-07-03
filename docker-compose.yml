@@ -6,7 +6,7 @@ volumes:
 
 services:
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v1.8.2
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
@@ -50,4 +50,4 @@ services:
       - 8080:8080
       - 8081:8081
     volumes:
-      - .:/code"
+      - .:/code
