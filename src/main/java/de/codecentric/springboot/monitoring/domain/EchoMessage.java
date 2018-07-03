@@ -1,12 +1,13 @@
 package de.codecentric.springboot.monitoring.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
 public class EchoMessage {
 
-    private final String message;
-
+    private String message;
 }

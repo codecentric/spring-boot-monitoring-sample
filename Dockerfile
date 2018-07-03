@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk:8-jdk-alpine
 MAINTAINER codecentric.de
 VOLUME /tmp
 EXPOSE 8080
