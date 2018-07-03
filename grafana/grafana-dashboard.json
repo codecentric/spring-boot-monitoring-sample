@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.4.2"
+      "version": "4.6.3"
     },
     {
       "type": "panel",
@@ -30,7 +30,17 @@
     }
   ],
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
   },
   "description": "Docker Monitoring Template",
   "editable": true,
@@ -39,7 +49,7 @@
   "hideControls": false,
   "id": null,
   "links": [],
-  "refresh": "10s",
+  "refresh": "30s",
   "rows": [
     {
       "collapse": false,
@@ -51,7 +61,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
-          "fill": 1,
+          "fill": 0,
           "id": 10,
           "legend": {
             "alignAsTable": true,
@@ -81,20 +91,30 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(http_response_time_milliseconds_sum{job=\"vp-opti\"}[5m])/rate(http_response_time_milliseconds_count{job=\"vp-opti\"}[5m])",
+              "expr": "delta(counter_status_200_cat[1m])",
               "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "{{ method }} {{ handler }} http {{ status }}",
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "/cat",
               "refId": "A",
               "step": 4
+            },
+            {
+              "expr": "idelta(counter_status_200_prometheus[1m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "/prometheus",
+              "refId": "B"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Http handler response time",
+          "title": "Http request count",
           "tooltip": {
-            "shared": false,
+            "shared": true,
             "sort": 0,
             "value_type": "individual"
           },
@@ -104,12 +124,11 @@
             "mode": "time",
             "name": null,
             "show": true,
-            "values": [
-              "total"
-            ]
+            "values": []
           },
           "yaxes": [
             {
+              "decimals": 0,
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -123,7 +142,7 @@
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         }
@@ -516,7 +535,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -545,6 +564,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "Docker Dashboard",
-  "version": 4
+  "title": "Spring Boot Monitoring Sample Dashboard",
+  "version": 1
 }

@@ -24,7 +24,7 @@ scrape_configs:
     metrics_path: '/prometheus'
 
     static_configs:
-         - targets: ['vp-opti:8080']
+         - targets: ['app:8080']
 
   - job_name: 'cadvisor'
 
